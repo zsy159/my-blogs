@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-gold: #d4a853;
+  --color-gold-light: #e0c060;
+  --color-gold-bg: rgba(212, 168, 83, 0.15);
+  --color-gold-bg-active: rgba(212, 168, 83, 0.25);
+  --color-charcoal: rgba(255, 255, 255, 0.08);
+  --color-status-green: #22c55e;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+    background: transparent;
+  }
+
+  body {
+    @apply min-h-screen font-sans text-white/90;
+    background: transparent;
+    overflow-x: hidden;
+  }
+
+  #app {
+    background: transparent;
+  }
+
+  ::selection {
+    @apply bg-gold-light/30 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/5 bg-black/10 shadow-sm backdrop-blur-sm
+           transition-all duration-300 hover:border-white/10 hover:bg-black/15;
+  }
+
+  .glass-tag {
+    @apply inline-flex cursor-pointer items-center rounded-full border border-white/10
+           bg-black/10 px-3.5 py-1.5 text-sm text-white/60 backdrop-blur-sm
+           transition-all duration-200 hover:border-white/15 hover:bg-black/15 hover:text-white/80;
+  }
+
+  .glass-tag-active {
+    @apply border-gold-light/30 bg-gold-bg-active text-white/90;
+  }
+
+  .nav-pill {
+    @apply rounded-xl border border-white/5 px-5 py-2 text-sm font-medium backdrop-blur-sm
+           transition-all duration-200;
+  }
+
+  .nav-pill-active {
+    @apply border-gold-light/20 bg-gold-bg text-white;
+  }
+
+  .nav-pill-inactive {
+    @apply bg-black/20 text-white/70 hover:border-white/10 hover:bg-black/30 hover:text-white;
+  }
+
+  .prose-geek {
+    @apply leading-relaxed text-white/70;
+  }
+
+  .prose-geek h1 {
+    @apply mb-6 border-b border-white/10 pb-4 text-3xl font-bold tracking-tight text-white
+           md:text-4xl;
+  }
+
+  .prose-geek h2 {
+    @apply mb-4 mt-10 text-2xl font-semibold tracking-tight text-white;
+  }
+
+  .prose-geek h3 {
+    @apply mb-3 mt-8 text-xl font-semibold text-white/90;
+  }
+
+  .prose-geek p {
+    @apply mb-4 leading-7 text-white/65;
+  }
+
+  .prose-geek a {
+    @apply text-gold-light underline decoration-gold-light/30 underline-offset-4 transition-colors
+           hover:decoration-gold-light;
+  }
+
+  .prose-geek blockquote {
+    @apply my-6 rounded-r-xl border-l-4 border-gold-light/40 bg-black/10 py-3 pl-4 pr-4
+           italic text-white/60 backdrop-blur-sm;
+  }
+
+  .prose-geek ul,
+  .prose-geek ol {
+    @apply mb-4 space-y-1 pl-6 text-white/65;
+  }
+
+  .prose-geek ul {
+    @apply list-disc;
+  }
+
+  .prose-geek ol {
+    @apply list-decimal;
+  }
+
+  .prose-geek li {
+    @apply leading-7;
+  }
+
+  .prose-geek hr {
+    @apply my-8 border-white/10;
+  }
+
+  .prose-geek table {
+    @apply mb-6 w-full border-collapse text-sm;
+  }
+
+  .prose-geek th {
+    @apply border border-white/10 bg-black/15 px-4 py-2 text-left font-medium text-gold-light
+           backdrop-blur-sm;
+  }
+
+  .prose-geek td {
+    @apply border border-white/10 px-4 py-2 text-white/60;
+  }
+
+  .prose-geek pre {
+    @apply my-6 overflow-x-auto rounded-xl border border-white/10 bg-black/20 backdrop-blur-sm;
+  }
+
+  .prose-geek pre code {
+    @apply block p-4 font-mono text-sm leading-relaxed;
+  }
+
+  .prose-geek :not(pre) > code {
+    @apply rounded border border-white/10 bg-black/20 px-1.5 py-0.5 font-mono text-sm
+           text-gold-light;
+  }
+
+  .prose-geek strong {
+    @apply font-semibold text-white;
+  }
+
+  .prose-geek em {
+    @apply text-white/60;
+  }
+}
+
+.prose-geek .hljs {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border-radius: 0.75rem;
+  color: #e2e8f0;
+}

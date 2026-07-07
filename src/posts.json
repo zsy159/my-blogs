@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "搭建我的首个 AI 自动化博客",
+    "date": "2026-07-06",
+    "tags": ["Vue3", "AI", "自动化"],
+    "summary": "探讨如何利用 AI 辅助工具快速构建个人技术矩阵，从架构选型到自动化部署的完整实践。",
+    "fileName": "ai-automation.md"
+  },
+  {
+    "id": "2",
+    "title": "Hello World — 极客博客启航",
+    "date": "2026-07-05",
+    "tags": ["Vue3", "Markdown", "极客"],
+    "summary": "第一篇测试文章，验证 Markdown 渲染、代码高亮与本地文件索引方案的完整数据流。",
+    "fileName": "hello-world.md"
+  }
+]
